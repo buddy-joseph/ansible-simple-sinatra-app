@@ -1,0 +1,15 @@
+---
+- name: application | update simple sinatra app repo
+  git: repo=git://github.com/tnh/simple-sinatra-app.git dest={{ application_root }}/simple-sinatra-app
+
+- name: application | install gems
+  shell: RBENV_ROOT={{ rbenv_root }} bundle install
+  args:
+    chdir: "{{ application_root }}/simple-sinatra-app"
+
+- name: application | create public folder
+  file: path="{{ application_root }}/simple-sinatra-app/public" state=directory
+
+- name: application | create virtual host
+  copy: src=files/simple-sinatra-app.conf dest=/etc/httpd/conf.d/simple-sinatra-app.conf owner=root group=root mode=0644
+  notify: Restart httpd
