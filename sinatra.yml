@@ -1,7 +1,6 @@
 ---
 - name: Provision a new application server and deploy application
   hosts: all
-  user: root
 
   roles:
     - os

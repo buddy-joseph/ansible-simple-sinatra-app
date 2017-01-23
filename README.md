@@ -16,9 +16,9 @@
 ## Usage
 
 $ git clone https://github.com/buddy-joseph/ansible-simple-sinatra-app.git
-$ ansible-playbook sinatra.yml -i hosts -k
+$ ansible-playbook sinatra.yml -i hosts -u root --ask-pass
 
 ## Note
 
 * Update IP in hosts file accordingly
-* Default user is root (this can be changed to another user with root privledges)
+* User must have root privledges
