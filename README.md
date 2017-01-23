@@ -15,8 +15,9 @@
 
 ## Usage
 
-$ git clone https://github.com/buddy-joseph/ansible-simple-sinatra-app.git
-$ ansible-playbook sinatra.yml -i hosts -u root --ask-pass
+`$ git clone https://github.com/buddy-joseph/ansible-simple-sinatra-app.git`
+
+`$ ansible-playbook sinatra.yml -i hosts -u root --ask-pass`
 
 ## Note
 
